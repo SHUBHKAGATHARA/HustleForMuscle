@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-700;
+  }
+  
+  body {
+    @apply bg-dark-primary text-white font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-neon-green to-neon-red bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-neon-green text-black font-bold text-lg rounded-none
+           hover:bg-white hover:shadow-neon-green transition-all duration-300
+           transform hover:scale-105 uppercase tracking-wider;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 bg-transparent border-2 border-neon-red text-neon-red font-bold text-lg rounded-none
+           hover:bg-neon-red hover:text-black hover:shadow-neon-red transition-all duration-300
+           transform hover:scale-105 uppercase tracking-wider;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-16;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .glow-text-green {
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.8),
+                 0 0 20px rgba(57, 255, 20, 0.5),
+                 0 0 30px rgba(57, 255, 20, 0.3);
+  }
+
+  .glow-text-red {
+    text-shadow: 0 0 10px rgba(255, 7, 58, 0.8),
+                 0 0 20px rgba(255, 7, 58, 0.5),
+                 0 0 30px rgba(255, 7, 58, 0.3);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #39FF14;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2dd40f;
+}
+
+/* Swiper Custom Styles */
+.swiper-pagination-bullet {
+  background: #fff !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #39FF14 !important;
+  opacity: 1 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #39FF14 !important;
+}
+
+/* Loading Animation */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
